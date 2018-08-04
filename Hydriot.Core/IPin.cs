@@ -9,5 +9,10 @@
         /// Pin number
         /// </summary>
         int PinNumber { get; }
+
+        /// <summary>
+        /// Represents the value of the pin
+        /// </summary>
+        PinValue PinValue { get; }
     }
 }

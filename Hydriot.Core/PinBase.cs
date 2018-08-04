@@ -17,6 +17,8 @@ namespace Hydriot.Core
 
         public int PinNumber => _pin.PinNumber;
 
+        public PinValue PinValue { get; }
+
         GpioPin _pin;
 
         #endregion Properties/Fields

@@ -12,9 +12,28 @@ namespace Hydriot.Core
 
         internal OutputPin(GpioPin pin, DriveMode mode) : base(pin)
         {
-            pin.SetDriveMode((Windows.Devices.Gpio.GpioPinDriveMode)mode);
+            pin.Write(GpioPinValue.High);
+            pin.SetDriveMode((GpioPinDriveMode)mode);
         }
 
         #endregion ctor
+
+        #region Properties/Fields
+
+        public new PinValue PinValue { get; set; }
+
+        public void Toggle()
+        {
+            if (PinValue == PinValue.Low)
+            {
+                PinValue = PinValue.High;
+            }
+            else
+            {
+                PinValue = PinValue.Low;
+            }
+        }
+
+        #endregion Properties/Fields
     }
 }

@@ -5,6 +5,7 @@ namespace Hydriot.Core
     internal class InputPin : PinBase, IInputPin
     {
         #region ctor
+
         public InputPin(GpioPin pin) : this(pin, DriveMode.Input)
         {
             pin.SetDriveMode(GpioPinDriveMode.Input);
@@ -14,6 +15,7 @@ namespace Hydriot.Core
         {
             pin.SetDriveMode((Windows.Devices.Gpio.GpioPinDriveMode)mode);
         }
-        #endregion
+
+        #endregion ctor
     }
 }
